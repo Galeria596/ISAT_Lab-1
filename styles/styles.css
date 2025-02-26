@@ -1,7 +1,7 @@
 /* CSS Variables */
 :root {
-  --font-primary: "SF Pro Text 400", "Helvetica", "Arial", sans-serif;
-  --font-heading: "SF Pro Display 700", sans-serif;
+  --font-primary: 'SF Pro Text 400', 'Helvetica', 'Arial', sans-serif;
+  --font-heading: 'SF Pro Display 700', sans-serif;
   --color-primary: #333;
   --color-secondary: #555;
   --color-background: #fafafa;
@@ -13,12 +13,7 @@
 }
 
 /* Reset and basic styles */
-body,
-h1,
-h2,
-p,
-ul,
-li {
+body, h1, h2, p, ul, li {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -34,11 +29,18 @@ body {
 /* Layout */
 .container {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
   height: 100vh;
 }
 
 /* Sidebar (Left) */
 .sidebar {
+
+top: 0px; /* Adjust as needed for vertical positioning */
+
+left: 0px; /* Adjust as needed for horizontal positioning */
   width: 250px;
   background: var(--color-background);
   padding: 20px;
@@ -76,6 +78,17 @@ body {
 
 .sidebar ul li.active a {
   font-weight: 600;
+}
+
+.sidebar ul > ul {
+  list-style: none;
+  font-weight: 900;
+  padding: 0;
+}
+
+.sidebar ul > li > ul > li {
+  margin: var(--spacing-unit) 0;
+  font-weight: 900;
 }
 
 /* Main Content */
@@ -127,18 +140,13 @@ p {
   margin: 20px 0;
 }
 
-math > mo,
-math > mi,
-math > mn {
-  font-family: Cambria Math, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-
 /* Right Sidebar */
 .right-sidebar {
   width: 200px;
   background: var(--color-background);
   padding: 20px;
   border-left: 1px solid var(--color-border);
+  align-self: flex-start;
 }
 
 .right-sidebar h3 {
@@ -162,6 +170,13 @@ math > mn {
 .right-sidebar ul li a:hover {
   text-decoration: underline;
 }
+
+.right-sidebar ul li.active a{
+  color: var(--color-active);
+  font-weight: 700;
+}
+
+
 
 /* Note Component */
 .note {
@@ -205,4 +220,71 @@ math > mn {
   .content {
     padding: 20px;
   }
+}
+/* Стили для пагинации */
+.pagination {
+display: flex;
+justify-content: center; /* Выравнивание по центру по горизонтали */
+align-items: center; /* Выравнивание по центру по вертикали, если необходимо */
+margin-top: 20px; /* Отступ сверху для отделения от основного контента */
+margin-bottom: 20px; /* Отступ снизу */
+}
+
+.page-button {
+display: inline-block; /* Чтобы кнопки располагались в ряд */
+padding: 10px 15px;
+text-decoration: none;
+color: #333; /* Цвет текста */
+background-color: #f4f4f4; /* Цвет фона кнопок */
+border: 1px solid #ddd; /* Рамка */
+margin: 0 5px; /* Расстояние между кнопками */
+border-radius: 5px; /* Скругление углов */
+}
+
+.page-button:hover {
+background-color: #e0e0e0; /* Цвет фона при наведении */
+}
+
+.current-page {
+background-color: #007bff; /* Цвет фона для текущей страницы - синий, можно изменить */
+color: white; /* Цвет текста для текущей страницы */
+border-color: #007bff; /* Цвет рамки для текущей страницы */
+}
+
+.current-page:hover {
+background-color: #0056b3; /* Более темный синий при наведении на текущую страницу */
+}
+/* Стиль для video элемента */
+video {
+  display: block; /* Ensures proper alignment */
+  margin: 20px auto; /* Centers the video */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  width: 100%; /* Adjusts to the container width */
+  max-width: 800px; /* Prevents it from becoming too large */
+  height: auto; /* Keeps aspect ratio */
+  outline: none; /* Removes focus outline */
+}
+
+video::-webkit-media-controls {
+  filter: invert(100%); /* Custom styling for media controls */
+}
+
+video:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+  transition: transform 0.3s ease-in-out;
+}
+
+img {
+  display: block; /* Ensures no extra space below the image */
+  width: 100%;
+  height: auto; /* Maintains aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow effect */
+  margin: 20px auto; /* Centers the image */
+  transition: transform 0.3s ease-in-out; /* Smooth transition effect */
+}
+
+img:hover {
+  transform: scale(1.05); /* Slight zoom effect on hover */
 }
