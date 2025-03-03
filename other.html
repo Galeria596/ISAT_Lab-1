@@ -15,6 +15,32 @@
         justify-content: center;
         align-items: center;
       }
+
+      .formula {
+        display: inline-flex;
+        align-items: baseline;
+        white-space: nowrap;
+
+        /* background-color: aqua; */
+      }
+      .block {
+        width: 100%;
+        justify-content: center;
+        margin: -10px 0 10px 0;
+      }
+      .with-index {
+        justify-content: space-between;
+      }
+      .formula:not(.inline) math {
+        font-size: 14pt;
+      }
+      .inline {
+        display: inline-flex;
+        align-items: baseline;
+      }
+      ul {
+        margin-bottom: 0.8em;
+      }
     </style>
   </head>
 
@@ -55,23 +81,24 @@
             <mover> <mi>B</mi><mo>&rarr;</mo> </mover>
           </math>
           называют потоком вектора магнитной индукции (магнитным потоком) через площадь
-          <math
-            ><mi>&Delta;</mi>
-            <mover> <mi>S</mi><mo>&rarr;</mo> </mover>
-          </math>
-          :
+          <span class="formula inline">
+            <math>
+              <mi>&Delta;</mi> <mover> <mi>S</mi> <mo>&rarr;</mo> </mover>
+            </math>
+            <span>:</span>
+          </span>
         </p>
-        <p>
+        <div class="formula block">
           <math>
             <mi>&Phi;</mi><mo>=</mo>
             <mover> <mi>B</mi><mo>&rarr;</mo> </mover>
             <mo>&sdot;</mo>
             <mover> <mi>S</mi><mo>&rarr;</mo> </mover>
           </math>
-        </p>
+        </div>
 
         <p>Полный поток через некоторую поверхность может быть записан в виде:</p>
-        <p>
+        <div class="formula block">
           <math>
             <mi>&Phi;</mi><mo>=</mo>
             <msub> <mo>&Sum;</mo><mi>i</mi> </msub>
@@ -82,13 +109,13 @@
             <msub> <mi>&alpha;</mi><mi>i</mi> </msub>
             <mo>)</mo>
           </math>
-        </p>
+        </div>
 
         <p>
           В том случае, если контур является плоским, а магнитное поле &mdash; однородным, то магнитный поток может быть
           определён по формуле:
         </p>
-        <p>
+        <div class="formula block">
           <math>
             <mi>&Phi;</mi>
             <mo>=</mo>
@@ -97,21 +124,24 @@
             <mo>(</mo><mi>&alpha;</mi><mo>)</mo>
           </math>
           ,
-        </p>
+        </div>
+
         <p>
           где <math><mi>&alpha;</mi></math> &ndash; угол между векторами
           <math>
             <mover> <mi>B</mi><mo>&rarr;</mo> </mover>
           </math>
           и
-          <math>
-            <mover> <mi>S</mi><mo>&rarr;</mo> </mover>
-          </math>
-          .
+          <span class="formula inline">
+            <math>
+              <mover> <mi>S</mi><mo>&rarr;</mo> </mover>
+            </math>
+            <span>.</span>
+          </span>
         </p>
 
         <p>Размерность магнитного потока:</p>
-        <p>
+        <div class="formula block">
           <math>
             <mo>[</mo><mi>&Phi;</mi><mo>]</mo>
             <mo>=</mo>
@@ -119,7 +149,7 @@
             <mo>=</mo>
             <mn>1</mn><mi>В</mi><mo>&sdot;</mo><mi>с</mi>
           </math>
-        </p>
+        </div>
 
         <p>
           Линии магнитного поля замкнуты, поэтому количество линий, которые входят в замкнутую поверхность, такое же,
@@ -138,7 +168,6 @@
           <img src="" alt="Опыт Фарадея" />
           <figcaption>Рис. 1 &ndash; Опыт Фарадея</figcaption>
         </figure>
-        <br />
 
         <p>
           Явление электромагнитной индукции объясняется следующим образом. Когда в первой катушке включается
@@ -161,38 +190,41 @@
         </div>
 
         <h3>Закон электромагнитной индукции</h3>
-        <br />
         <p>
           Количественно из эксперимента было получено, что сила индукционного тока пропорциональна скорости изменения
           магнитного потока:
         </p>
-        <math>
-          <mi>I</mi><mo> ~ </mo>
-          <mfrac>
-            <mrow> <mi>&Delta;</mi><mi>&Phi;</mi> </mrow>
-            <mrow> <mi>&Delta;</mi><mi>t</mi> </mrow>
-          </mfrac>
-        </math>
-        <div class="note">
-          <p>
-            В замкнутом контуре ЭДС электромагнитной индукции по величине равна скорости изменения магнитного потока и
-            направлена таким образом, чтобы препятствовать этому изменению:
-          </p>
+        <div class="formula block">
           <math>
-            <msub><mi>E</mi><mi>i</mi> </msub>
-            <mo>=</mo>
-            <mo>&ndash;</mo>
+            <mi>I</mi><mo> ~ </mo>
             <mfrac>
               <mrow> <mi>&Delta;</mi><mi>&Phi;</mi> </mrow>
               <mrow> <mi>&Delta;</mi><mi>t</mi> </mrow>
             </mfrac>
-            <mo>=</mo>
-            <mo>&ndash;</mo><mi>&Phi;</mi><mi>&prime;</mi>
           </math>
         </div>
 
+        <div class="note">
+          <p>
+            В замкнутом контуре ЭДС электромагнитной индукции по величине равна скорости изменения магнитного потока и
+            направлена таким образом, чтобы препятствовать этому изменению:
+            <span class="formula inline">
+              <math>
+                <msub> <mi>E</mi><mi>i</mi> </msub>
+                <mo>=</mo>
+                <mo>&ndash;</mo>
+                <mfrac>
+                  <mrow> <mi>&Delta;</mi><mi>&Phi;</mi> </mrow>
+                  <mrow> <mi>&Delta;</mi><mi>t</mi> </mrow>
+                </mfrac>
+                <mo>=</mo>
+                <mo>&ndash;</mo><mi>&Phi;</mi><mi>&prime;</mi>
+              </math>
+            </span>
+          </p>
+        </div>
+
         <h3>ЭДС индукции в движущихся проводникаx</h3>
-        <br />
         <p>
           Рассмотрим движущийся в однородном магнитном поле проводник. В нём на каждый заряд действует сила Лоренца. Под
           её действием внутри проводника начинают двигаться свободные заряды, из-за чего появляется электродвижущая
@@ -201,45 +233,58 @@
         <p>
           Если в однородном магнитном поле находится контур, состоящий из рамки и движущегося по ней проводника
           (скорость проводника постоянна и равна
-          <math><mi>V</mi></math> ) (рис. 2), то сила Лоренца, которая действует на каждую частицу в движущемся
-          проводнике, равна:
+          <span class="formula inline">
+            <math> <mi>V</mi> </math><span>)</span>
+          </span>
+          (рис. 2), то сила Лоренца, которая действует на каждую частицу в движущемся проводнике, равна:
         </p>
-        <math>
-          <mover>
-            <msub> <mi>F</mi><mi>l</mi> </msub>
-            <mo>&rarr;</mo>
-          </mover>
-          <mo>=</mo>
-          <mi>q</mi>
-          <mover> <mi>V</mi><mo>&rarr;</mo> </mover>
-          <mo>&times;</mo>
-          <mover> <mi>B</mi><mo>&rarr;</mo> </mover>
-        </math>
-        (1)
+
+        <div class="formula block with-index">
+          <span></span>
+          <math>
+            <mover>
+              <msub> <mi>F</mi><mi>l</mi> </msub>
+              <mo>&rarr;</mo>
+            </mover>
+            <mo>=</mo>
+            <mi>q</mi>
+            <mover> <mi>V</mi><mo>&rarr;</mo> </mover>
+            <mo>&times;</mo>
+            <mover> <mi>B</mi><mo>&rarr;</mo> </mover>
+          </math>
+          <span>(1)</span>
+        </div>
         <figure>
           <img src="" alt="Модель движения проводника" />
           <figcaption>Рис. 2 &ndash; Физическая модель движения проводника в магнитном поле</figcaption>
         </figure>
-        <br />
 
         <p>
           Формула (1) описывает силу, которая действует на положительный заряд. Она направлена вдоль проводника, а её
           работа по перемещению заряда между концами этого проводника равна:
         </p>
-        <math>
-          <msub> <mi>A</mi><mi>ст</mi> </msub>
-          <mo>=</mo>
-          <msub> <mi>F</mi><mi>l</mi> </msub>
-          <mi>l</mi>
-          <mo>=</mo>
-          <mi>q</mi>
-          <mi>V</mi>
-          <mi>B</mi>
-          <mi>l</mi>
-          <mo>sin</mo>
-          <mo>(</mo><mi>&alpha;</mi><mo>)</mo>
-        </math>
-        (2), где
+        <div class="formula block with-index">
+          <span></span>
+          <span>
+            <math>
+              <msub> <mi>A</mi><mi>ст</mi> </msub>
+              <mo>=</mo>
+              <msub> <mi>F</mi><mi>l</mi> </msub>
+              <mi>l</mi>
+              <mo>=</mo>
+              <mi>q</mi>
+              <mi>V</mi>
+              <mi>B</mi>
+              <mi>l</mi>
+              <mo>sin</mo>
+              <mo>(</mo><mi>&alpha;</mi><mo>)</mo>
+            </math>
+            ,
+          </span>
+          <span>(2)</span>
+        </div>
+        <p>где:</p>
+
         <ul>
           <li>
             <math><mi>l</mi></math> &ndash; это длина движущегося проводника,
@@ -251,23 +296,79 @@
         </ul>
 
         <p>Из формулы (2) следует формула для ЭДС:</p>
-        <math></math>
+        <div class="formula block">
+          <math>
+            <msub> <mi>E</mi><mi>i</mi> </msub>
+            <mo>=</mo>
+            <msub> <mi>A</mi><mi>ст</mi> </msub>
+            <mi>q</mi>
+            <mo>=</mo>
+            <mi>V</mi>
+            <mi>B</mi>
+            <mi>l</mi>
+            <mo>sin</mo>
+            <mo>(</mo><mi>&alpha;</mi><mo>)</mo>
+          </math>
+        </div>
 
         <p>
           Эту же формулу можно получить из другого типа рассуждений. Рассмотрим этот же эксперимент, однако положим, что
-          движущийся проводник и рамка создают замкнутый контур с некоторой площадью <math><mi>S</mi></math> . За
-          некоторое время <math><mi>&Delta;</mi><mi>t</mi></math> площадь изменится на:
+          движущийся проводник и рамка создают замкнутый контур с некоторой площадью
+          <span class="formula inline">
+            <math> <mi>S</mi> </math><span>.</span>
+          </span>
+          За некоторое время <math><mi>&Delta;</mi><mi>t</mi></math> площадь изменится на:
         </p>
-        <math></math>
+        <div class="formula block">
+          <math>
+            <mi>&Delta;</mi><mi>S</mi>
+            <mo>=</mo>
+            <mo>&ndash;</mo>
+            <mi>V</mi>
+            <mi>l</mi>
+            <mi>&Delta;</mi><mi>t</mi>
+          </math>
+          ,
+        </div>
+        <p>
+          где знак &laquo;<math> <mo>&ndash;</mo> </math>&raquo; указывает на уменьшение площади.
+        </p>
 
         <p>Как следствие, изменится магнитный поток через рассматриваемый контур:</p>
-        <math></math>
+        <div class="formula block">
+          <math>
+            <mi>&Delta;</mi><mi>&Phi;</mi>
+            <mo>=</mo>
+            <mo>&ndash;</mo>
+            <mi>B</mi>
+            <mi>V</mi>
+            <mi>l</mi>
+            <mi>&Delta;</mi><mi>t</mi>
+            <mo>sin</mo>
+            <mo>(</mo><mi>&alpha;</mi><mo>)</mo>
+          </math>
+        </div>
 
         <p>По закону электромагнитной индукции величина возникающей ЭДС может быть определена как:</p>
-        <math></math>
+        <div class="formula block">
+          <math>
+            <msub><mi>E</mi><mi>i</mi> </msub>
+            <mo>=</mo>
+            <mo>&ndash;</mo>
+            <mfrac>
+              <mrow> <mi>&Delta;</mi><mi>&Phi;</mi> </mrow>
+              <mrow> <mi>&Delta;</mi><mi>t</mi> </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mi>B</mi>
+            <mi>V</mi>
+            <mi>l</mi>
+            <mo>sin</mo>
+            <mo>(</mo><mi>&alpha;</mi><mo>)</mo>
+          </math>
+        </div>
 
         <figure class="video">Видео 1</figure>
-        <br />
 
         <h3>Явление самоиндукции. Индуктивность</h3>
         <div class="note">
@@ -283,44 +384,127 @@
           Величина вектора магнитной индукции прямо пропорциональна силе тока. А поскольку поток вектора магнитной
           индукции прямо пропорционален модулю его вектора, то:
         </p>
-        <math></math>
+        <div class="formula block">
+          <math>
+            <mi>&Phi;</mi>
+            <mo> ~ </mo>
+            <mi>B</mi>
+            <mo> ~ </mo>
+            <mi>I</mi>
+            <mo>=</mo>
+            <mi>L</mi>
+            <mi>I</mi>
+          </math>
+        </div>
 
         <div class="note">
           <strong>Определение</strong>
           <p>
             Этот коэффициент пропорциональности <math><mi>L</mi></math> связывает магнитный поток и силу тока в контуре.
             Его называют <b>индуктивностью контура</b> (<b>коэффициентом самоиндукции</b>):
+            <math>
+              <mi>L</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow>
+                  <mi>&Phi;</mi>
+                </mrow>
+                <mi>I</mi>
+              </mfrac>
+            </math>
+            (3)
           </p>
-          <math></math>
-          (3)
         </div>
 
         <p>
           Единица измерения индуктивности:
-          <math></math>
+          <span class="formula inline">
+            <math>
+              <mn>1</mn><mi>Гн</mi>
+              <mo>=</mo>
+              <mn>1</mn><mi>В</mi>
+              <mo>&sdot;</mo>
+              <mn>1</mn><mi>А</mi>
+              <mo>&sdot;</mo>
+              <mi>с</mi>
+              <mo>=</mo>
+              <mn>1</mn><mi>В</mi>
+              <mo>*</mo>
+              <mfrac>
+                <mrow> <mn>1</mn><mi>с</mi> </mrow>
+                <mrow> <mn>1</mn><mi>А</mi> </mrow>
+              </mfrac>
+              <mo>=</mo>
+              <mn>1</mn><mi>&Omega;</mi>
+              <mo>*</mo>
+              <mi>c</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow> <mn>1</mn><mi>Вб</mi> </mrow>
+                <mi>A</mi>
+              </mfrac>
+            </math>
+          </span>
         </p>
 
         <p>Пользуясь формулой (3) и законом электромагнитной индукции, получим, что ЭДС самоиндукции:</p>
-        <math></math>
+        <div class="formula block">
+          <math>
+            <msub> <mi>E</mi><mi>i</mi> </msub>
+            <mo>=</mo>
+            <mo>&ndash;</mo>
+            <mfrac>
+              <mrow> <mi>&Delta;</mi><mi>&Phi;</mi> </mrow>
+              <mrow> <mi>&Delta;</mi><mi>t</mi> </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mo>&ndash;</mo>
+            <mi>L</mi>
+            <mfrac>
+              <mrow> <mi>&Delta;</mi><mi>I</mi> </mrow>
+              <mrow> <mi>&Delta;</mi><mi>t</mi> </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mi>L</mi>
+            <mi>I</mi><mi>&prime;</mi>
+          </math>
+          ,
+        </div>
         <p>
-          , где знак &laquo;&ndash;&raquo; отражает правило Ленца, показывающее, что ЭДС самоиндукции препятствует
-          изменению тока в проводнике.
+          где знак &laquo;<math> <mo>&ndash;</mo> </math>&raquo; отражает правило Ленца, показывающее, что ЭДС
+          самоиндукции препятствует изменению тока в проводнике.
         </p>
 
         <figure class="video">Видео 2</figure>
-        <br />
 
         <h3>Энергия магнитного поля. Магнитные свойства вещества</h3>
         <div class="note">
           <strong>Определение</strong>
           <p>
             <b>Энергия магнитного поля</b> связана с его состоянием и может быть выражена через магнитную индукцию
-            <math><mi>B</mi></math> и магнитное поле <math><mi>H</mi></math> . Энергия, заключенная в магнитном поле,
+            <math> <mi>B</mi> </math> и магнитное поле <math> <mi>H</mi> </math>. Энергия, заключенная в магнитном поле,
             определяется с помощью следующей формулы:
           </p>
-          <math></math>
+          <span class="formula inline">
+            <math>
+              <mi>W</mi>
+              <mo>=</mo>
+              <mfrac>
+                <mrow> <mn>1</mn> </mrow>
+                <mn>2</mn>
+              </mfrac>
+              <mo>&int;</mo>
+              <mi>B</mi>
+              <mo>&sdot;</mo>
+              <mi>H</mi>
+              <mo>&sdot;</mo>
+              <mi>d</mi>
+              <mi>V</mi>
+            </math>
+            ,
+          </span>
         </div>
-        <p>, где:</p>
+        <p>где:</p>
         <ul>
           <li>
             <math><mi>W</mi></math> &ndash; энергия магнитного поля,
@@ -338,16 +522,50 @@
 
         <p>
           Если магнитное поле находится в вакууме или в веществе с линейной магнитной проницаемостью
-          <math><mi>&mu;</mi></math> , то связь между магнитной индукцией и напряженностью поля описывается через:
+          <span class="formula inline">
+            <math> <mi>&mu;</mi> </math><span>,</span>
+          </span>
+          то связь между магнитной индукцией и напряженностью поля описывается через:
         </p>
-        <math></math>
+        <div class="formula block">
+          <math>
+            <mi>B</mi>
+            <mo>=</mo>
+            <mi>&mu;</mi>
+            <mi>H</mi>
+          </math>
+        </div>
 
         <p>Таким образом, энергия магнитного поля в данном случае может быть записана как:</p>
-        <math></math>
+        <div class="formula block">
+          <math>
+            <mi>W</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow> <mn>1</mn> </mrow>
+              <mn>2</mn>
+            </mfrac>
+            <mo>&int;</mo>
+            <mi>&mu;</mi>
+            <msup> <mi>H</mi><mn>2</mn> </msup>
+            <mi>d</mi>
+            <mi>V</mi>
+          </math>
+        </div>
 
         <p>Энергия магнитного поля также может быть выражена через магнитный момент системы и магнитное поле:</p>
-        <math></math>
-        <p>, где:</p>
+        <div class="formula block">
+          <math>
+            <mi>W</mi>
+            <mo>=</mo>
+            <mo>&ndash;</mo>
+            <mi>m</mi>
+            <mo>&sdot;</mo>
+            <mi>H</mi>
+          </math>
+          ,
+        </div>
+        <p>где:</p>
         <ul>
           <li>
             <math><mi>m</mi></math> &ndash; магнитный момент,
@@ -357,7 +575,6 @@
           </li>
         </ul>
 
-        <br />
         <figure class="video">Видео 3</figure>
       </main>
 

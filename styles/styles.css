@@ -34,7 +34,7 @@ body {
 /* Layout */
 .container {
   display: flex;
-  height: 100vh;
+  height: 100%;
 }
 
 /* Sidebar (Left) */
@@ -127,9 +127,7 @@ p {
   margin: 20px 0;
 }
 
-math > mo,
-math > mi,
-math > mn {
+math {
   font-family: Cambria Math, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
@@ -188,6 +186,7 @@ math > mn {
 
 /* Responsive Design */
 @media (max-width: 900px) {
+  .sidebar,
   .right-sidebar {
     display: none;
   }
