@@ -24,6 +24,10 @@ li {
   box-sizing: border-box;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: var(--font-primary);
   font-size: 18px;
@@ -33,28 +37,31 @@ body {
 
 /* Layout */
 .container {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   height: 100%;
 }
 
 /* Sidebar (Left) */
 .sidebar {
-  width: 250px;
-  background: var(--color-background);
+  width: 100%;
   padding: 20px;
+  background: var(--color-background);
   overflow-y: auto;
   border-right: 1px solid var(--color-border);
 }
 
 .sidebar h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
+  font-size: 16pt;
+  margin-bottom: .5em;
   color: var(--color-primary);
 }
 
 .sidebar ul {
   list-style: none;
   padding: 0;
+  font-size: 12pt;
+  min-width: fit-content;
 }
 
 .sidebar ul li {
@@ -80,9 +87,59 @@ body {
 
 /* Main Content */
 .content {
-  flex: 1;
+  width: 100%;
   padding: 40px;
-  max-width: 800px;
+}
+
+.subtitle {
+  font-size: 20px;
+  line-height: 1.3em;
+  margin-bottom: 24px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.formula {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.block {
+  width: 100%;
+  justify-content: center;
+  margin: -.8em 0 .6em 0;
+}
+
+.in-list {
+  margin: .8em 0 -.6em 0;
+}
+
+.with-index {
+  justify-content: space-between;
+}
+
+.formula:not(.inline) math {
+  font-size: 14pt;
+}
+
+.inline {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.img-container {
+  height: fit-content;
+  margin: .8em 0;
+}
+
+.img-container img {
+  height: 300px;
 }
 
 h1 {
@@ -100,6 +157,7 @@ h2 {
   margin-bottom: 12px;
 }
 
+ul,
 ol {
   margin-left: 1.6rem;
   margin-top: 0.8rem;
@@ -114,28 +172,15 @@ p {
   margin-bottom: 0.8em;
 }
 
-.subtitle {
-  font-size: 20px;
-  line-height: 1.3em;
-  margin-bottom: 24px;
-}
-
-.main-image {
-  width: 100%;
-  max-width: 600px;
-  border-radius: 8px;
-  margin: 20px 0;
-}
-
 math {
   font-family: Cambria Math, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 
 /* Right Sidebar */
 .right-sidebar {
-  width: 200px;
-  background: var(--color-background);
+  width: 100%;
   padding: 20px;
+  background: var(--color-background);
   border-left: 1px solid var(--color-border);
 }
 
@@ -185,20 +230,23 @@ math {
 }
 
 /* Responsive Design */
-@media (max-width: 900px) {
-  .sidebar,
-  .right-sidebar {
-    display: none;
-  }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 1150px) {
   .sidebar {
-    width: 200px;
+    display: none;
   }
 
   .container {
-    flex-direction: column;
+    grid-template-columns: 3fr 1fr;
+  }
+}
+
+@media (max-width: 900px) {
+  .right-sidebar {
+    display: none;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
   }
 
   .content {
