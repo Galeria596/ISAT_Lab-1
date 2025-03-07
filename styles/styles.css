@@ -44,12 +44,19 @@ body {
 
 /* Sidebar (Left) */
 .sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Чтобы на весь экран */
+  overflow-y: auto; /* Если контент не влезает - скролл внутри сайдбара */
+  align-self: start; /* Для grid-родителя обязательно! */
+  
   width: 100%;
   padding: 20px;
   background: var(--color-background);
   overflow-y: auto;
   border-right: 1px solid var(--color-border);
 }
+
 
 .sidebar h3 {
   font-size: 16pt;
@@ -240,16 +247,41 @@ math {
   }
 }
 
-@media (max-width: 900px) {
-  .right-sidebar {
-    display: none;
+.right-sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh; /* Чтобы на весь экран */
+  overflow-y: auto; /* Если контент не влезает - скролл внутри сайдбара */
+  align-self: start; /* Для grid-родителя обязательно! */
+  
+  transition: transform 0.3s;
+  @media (max-width: 900px) {
+    transform: translateX(100%);
+    position: fixed;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    z-index: 1000;
   }
+}
 
-  .container {
-    grid-template-columns: 1fr;
-  }
+/* Стиль для video элемента */
+video {
+  display: block; /* Ensures proper alignment */
+  margin: 20px auto; /* Centers the video */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
+  width: 100%; /* Adjusts to the container width */
+  max-width: 800px; /* Prevents it from becoming too large */
+  height: auto; /* Keeps aspect ratio */
+  outline: none; /* Removes focus outline */
+}
 
-  .content {
-    padding: 20px;
-  }
+video::-webkit-media-controls {
+  filter: invert(100%); /* Custom styling for media controls */
+}
+
+video:hover {
+  transform: scale(1.02); /* Slight zoom effect on hover */
+  transition: transform 0.3s ease-in-out;
 }

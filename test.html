@@ -1,110 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Тест по пройденному материалу</title>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css" />
-  </head>
+    <title>Math Quiz</title>
+    <style>
+        /* Basic styling for layout and readability */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
 
-  <body>
+        #quiz,
+        #results {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .question p {
+            margin: 0 0 10px 0;
+            font-weight: bold;
+        }
+
+        .options label {
+            display: block;
+            margin-bottom: 5px;
+            cursor: pointer;
+        }
+
+        button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #results {
+            display: none;
+            /* Hidden until quiz is submitted */
+        }
+
+        #results p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+
+<body>
     <div class="container">
-      <!-- Left Sidebar -->
-      <nav class="sidebar">
-        <h3>ГДЗ Виленкин 6 класс</h3>
-        <ul>
-          <li><a href="index.html">Механические колебания и волны</a></li>
-          <li><a href="other.html">Электродинамика. Электромагнитная индукция</a></li>
-          <li class="active"><a href="">Тест</a></li>
-        </ul>
-      </nav>
+        <!-- Left Sidebar -->
+        <nav class="sidebar">
+            <h3>ГДЗ Виленкин 6 класс</h3>
+            <ul>
+                <li><a href="index.html">Механические колебания и волны</a></li>
+                <li><a href="other.html">Электродинамика. Электромагнитная индукция</a></li>
+                <li class="active"><a href="">Тест</a></li>
+            </ul>
+        </nav>
 
-      <!-- Main Content -->
-      <main class="content">
-        <h1>Механические колебания и волны. Основные понятия</h1>
-        <p class="subtitle">
-          Механические колебания окружают нас повсюду — от раскачивания качелей до вибрации телефонного звонка. Это
-          явление можно встретить в самых разных ситуациях: когда автомобиль проезжает по неровной дороге, или когда
-          струна гитары издает звук. В этой статье мы разберёмся, что такое механические колебания, как они происходят и
-          какие законы ими управляют.
-        </p>
-        <h3>Что такое колебания и волны. Периодические и механические колебания</h3>
-        <div class="note">
-          <strong>Определение</strong>
-          <p><b>Колебания</b> — повторяющиеся около точки равновесия изменения состояния системы.</p>
-        </div>
-        <p>Проще говоря, для колебания необходимы:</p>
-        <ol start="1">
-          <li>Система — объект физических исследований.</li>
-          <li>Определённые состояния этой системы.</li>
-          <li>Изменение этих состояний, повторяющееся со временем.</li>
-        </ol>
 
-        <p>
-          Например, под колебаниями температуры воздуха подразумевается периодические изменения состояния (нагретости)
-          системы (воздух) относительно определённой точки (к примеру, относительно нуля — 0°С).
-        </p>
-        <p>Или колебания струны гитары: изменение положения струны в пространстве относительно «точки покоя».</p>
-        <div>
-          <p>Колебания можно классифицировать по-разному. Например, по физической природе:</p>
-          <ol start="1">
-            <li>Система — объект физических исследований.</li>
-            <li>Определённые состояния этой системы.</li>
-            <li>Изменение этих состояний, повторяющееся со временем.</li>
-          </ol>
-        </div>
-        <div class="note">
-          <strong>Определение</strong>
-          <p>
-            <b>Механические колебания</b> — колебательные (повторяющиеся во времени) движения тела или системы тел.
-            Примером механических колебаний является движение струны музыкального инструмента, движение иголки швейной
-            машины, а также возникновение звука и вибрации.
-          </p>
-        </div>
 
-        <div class="note">
-          <strong>Определение</strong>
-          <p>
-            <b>Электромагнитные колебания</b> — периодические изменения напряжённости и индукции электромагнитного поля.
-          </p>
-        </div>
+        <!-- Main Content -->
+        <main class="content">
+            <!-- Quiz Section -->
+            <div id="quiz">
+                <h1>Тест</h1>
+                <form id="quizForm">
+                    <div class="question">
+                        <p>1. Какие из следующих явлений являются примерами механических колебаний? </p>
+                        <div class="options">
+                            <label><input type="radio" name="q1" value="A"> A) Колебания струны гитары</label>
+                            <label><input type="radio" name="q1" value="B"> B) Радиоволны</label>
+                            <label><input type="radio" name="q1" value="C"> C) Световое излучение</label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>2. Какое из уравнений описывает гармонические колебания, если движение начинается с
+                            максимального отклонения в момент времени t = 0 ?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q2" value="A"> A) xt=Acos 2πνt+0</label>
+                            <label><input type="radio" name="q2" value="B"> B) xt=Asin 2πνt+0</label>
+                            <label><input type="radio" name="q2" value="C"> C) xt=Asin t+0 </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>3. Какое из следующих явлений является примером автоколебаний?</p>
+                        <div class="options">
+                            <label><input type="radio" name="q3" value="A"> A) Колебания струн гитары после того, как их коснулся музыкант</label>
+                            <label><input type="radio" name="q3" value="B"> B) Колебания грузика на пружине, который периодически сжимается и растягивается</label>
+                            <label><input type="radio" name="q3" value="C"> C) Колебания колеса автомобиля при движении по неровной дороге</label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>4. Период колебаний потенциальной энергии пружинного маятника 1 с. Каким будет период её колебаний, если массу груза маятника и жесткость пружины уменьшить в 8 раз? Ответ дайте в секундах. </p>
+                        <div class="options">
+                            <label><input type="radio" name="q4" value="A"> A) 2 сек</label>
+                            <label><input type="radio" name="q4" value="B"> B) 1 сек</label>
+                            <label><input type="radio" name="q4" value="C"> C) 0.5 сек</label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p>5. В таблице представлены данные о положении точки, гармонически колеблющейся вдоль оси Ox в различные моменты времени. Чему равна амплитуда колебаний точки?</p>
+                        <figure class="img-container">
+                            <img src="pics/test/question5.webp" alt="Рисунок волны" />
+                          </figure>
+                        <div class="options">
+                            <label><input type="radio" name="q5" value="A"> A) 15 м</label>
+                            <label><input type="radio" name="q5" value="B"> B) 5 м</label>
+                            <label><input type="radio" name="q5" value="C"> C) 10 м</label>
+                        </div>
+                    </div>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
 
-        <div>
-          <p>Обратите внимание, как определение колебаний осуществляется в этом случае:</p>
-          <ol start="1">
-            <li>Система — электромагнитное поле.</li>
-            <li>Состояние — характеристика напряжённости и индукции.</li>
-            <li>Движение (изменение значений этих физических величин) во времени.</li>
-          </ol>
-        </div>
-        <p>
-          Примером электромагнитных колебаний являются радиоволны, микроволны, инфракрасное излучение, видимый свет,
-          ультрафиолетовое излучение, рентгеновские лучи, гамма-лучи.
-        </p>
+            <!-- Results Section -->
+            <div id="results">
+                <h1>Results</h1>
+                <p>Correct answers: <span id="correct"></span></p>
+                <p>Incorrect answers: <span id="incorrect"></span></p>
+            </div>
 
-        <p>
-          Колебания, которые мы будем рассматривать, обладают общим свойством — периодичностью, т. е. движения
-          повторяются через равные промежутки времени. Но природе существуют также и затухающие, апериодические,
-          квазипериодические и другие колебания
-        </p>
-        <div class="note">
-          <strong>Определение</strong>
-          <p>
-            <b>Волна</b> — это процесс распространения колебаний в пространстве и времени, при котором энергия
-            передаётся от одной точки к другой без переноса вещества.
-          </p>
-        </div>
-      </main>
+        </main>
 
-      <!-- Right Sidebar -->
-      <aside class="right-sidebar">
-        <h3>Механические колебания и волны</h3>
-        <ul>
-          <li><a href="#">Основные понятия</a></li>
-          <li><a href="#">Виды колебаний</a></li>
-          <li><a href="#">Характеристики колебаний</a></li>
-        </ul>
-      </aside>
+
     </div>
-  </body>
+    <!-- JavaScript for handling submission -->
+    <script>
+        document.getElementById('quizForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent form from submitting to a server
+
+            // Array of correct answers (A, B, B, C, A correspond to questions 1-5)
+            const correctAnswers = ['A', 'A', 'B', 'B', 'A'];
+            let correctCount = 0;
+            const totalQuestions = 5;
+
+            // Check each question's selected answer
+            for (let i = 1; i <= totalQuestions; i++) {
+                const selected = document.querySelector(`input[name="q${i}"]:checked`);
+                if (selected && selected.value === correctAnswers[i - 1]) {
+                    correctCount++;
+                }
+            }
+
+            // Calculate incorrect answers
+            const incorrectCount = totalQuestions - correctCount;
+
+            // Update the results display
+            document.getElementById('correct').textContent = correctCount;
+            document.getElementById('incorrect').textContent = incorrectCount;
+
+            // Hide quiz and show results
+            document.getElementById('quiz').style.display = 'none';
+            document.getElementById('results').style.display = 'block';
+        });
+    </script>
+</body>
+
 </html>
