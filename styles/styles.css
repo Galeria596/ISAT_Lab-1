@@ -1,198 +1,255 @@
 /* CSS Variables */
 :root {
-    --font-primary: 'SF Pro Text 400', 'Helvetica', 'Arial', sans-serif;
-    --font-heading: 'SF Pro Display 700', sans-serif;
-    --color-primary: #333;
-    --color-secondary: #555;
-    --color-background: #fafafa;
-    --color-border: #ddd;
-    --color-hover: #ddd;
-    --color-active: #9e6700;
-    --spacing-unit: 8px;
-    --border-radius: 5px;
-  }
-  
-  /* Reset and basic styles */
-  body, h1, h2, p, ul, li {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: var(--font-primary);
-    font-size: 18px;
-    color: var(--color-primary);
-    line-height: 1.2em;
-  }
-  
-  /* Layout */
-  .container {
-    display: flex;
-    height: 100vh;
-  }
-  
-  /* Sidebar (Left) */
+  --font-primary: "SF Pro Text 400", "Helvetica", "Arial", sans-serif;
+  --font-heading: "SF Pro Display 700", sans-serif;
+  --color-primary: #333;
+  --color-secondary: #555;
+  --color-background: #fafafa;
+  --color-border: #ddd;
+  --color-hover: #ddd;
+  --color-active: #9e6700;
+  --spacing-unit: 8px;
+  --border-radius: 5px;
+}
+
+/* Reset and basic styles */
+body,
+h1,
+h2,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-size: 18px;
+  color: var(--color-primary);
+  line-height: 1.2em;
+}
+
+/* Layout */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  height: 100%;
+}
+
+/* Sidebar (Left) */
+.sidebar {
+  width: 100%;
+  padding: 20px;
+  background: var(--color-background);
+  overflow-y: auto;
+  border-right: 1px solid var(--color-border);
+}
+
+.sidebar h3 {
+  font-size: 16pt;
+  margin-bottom: .5em;
+  color: var(--color-primary);
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  font-size: 12pt;
+  min-width: fit-content;
+}
+
+.sidebar ul li {
+  margin: var(--spacing-unit) 0;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: var(--color-secondary);
+  display: block;
+  padding: var(--spacing-unit);
+  border-radius: var(--border-radius);
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li.active a {
+  background: var(--color-hover);
+}
+
+.sidebar ul li.active a {
+  font-weight: 600;
+}
+
+/* Main Content */
+.content {
+  width: 100%;
+  padding: 40px;
+}
+
+.subtitle {
+  font-size: 20px;
+  line-height: 1.3em;
+  margin-bottom: 24px;
+}
+
+.main-image {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  margin: 20px 0;
+}
+
+.formula {
+  display: inline-flex;
+  align-items: baseline;
+  white-space: nowrap;
+}
+
+.block {
+  width: 100%;
+  justify-content: center;
+  margin: -.8em 0 .6em 0;
+}
+
+.in-list {
+  margin: .8em 0 -.6em 0;
+}
+
+.with-index {
+  justify-content: space-between;
+}
+
+.formula:not(.inline) math {
+  font-size: 14pt;
+}
+
+.inline {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.img-container {
+  height: fit-content;
+  margin: .8em 0;
+}
+
+.img-container img {
+  height: 300px;
+}
+
+h1 {
+  font-family: var(--font-heading);
+  font-size: 34px;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  line-height: 1.2em;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+ul,
+ol {
+  margin-left: 1.6rem;
+  margin-top: 0.8rem;
+  margin-bottom: 0.6rem;
+}
+
+li {
+  line-height: 1.5em;
+}
+
+p {
+  margin-bottom: 0.8em;
+}
+
+math {
+  font-family: Cambria Math, Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+  width: 100%;
+  padding: 20px;
+  background: var(--color-background);
+  border-left: 1px solid var(--color-border);
+}
+
+.right-sidebar h3 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.right-sidebar ul {
+  list-style: none;
+}
+
+.right-sidebar ul li {
+  margin-bottom: 10px;
+}
+
+.right-sidebar ul li a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+.right-sidebar ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Note Component */
+.note {
+  background: #fffbf2;
+  border-left: 5px solid var(--color-active);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.note strong {
+  display: block;
+  font-size: 16px;
+  color: var(--color-active);
+  margin-bottom: 5px;
+}
+
+.note p {
+  font-size: 16px;
+  line-height: 1.5em;
+}
+
+/* Responsive Design */
+@media (max-width: 1150px) {
   .sidebar {
-    width: 250px;
-    background: var(--color-background);
-    padding: 20px;
-    overflow-y: auto;
-    border-right: 1px solid var(--color-border);
+    display: none;
   }
-  
-  .sidebar h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: var(--color-primary);
+
+  .container {
+    grid-template-columns: 3fr 1fr;
   }
-  
-  .sidebar ul {
-    list-style: none;
-    padding: 0;
-  }
-  
-  .sidebar ul li {
-    margin: var(--spacing-unit) 0;
-  }
-  
-  .sidebar ul li a {
-    text-decoration: none;
-    color: var(--color-secondary);
-    display: block;
-    padding: var(--spacing-unit);
-    border-radius: var(--border-radius);
-  }
-  
-  .sidebar ul li a:hover,
-  .sidebar ul li.active a {
-    background: var(--color-hover);
-  }
-  
-  .sidebar ul li.active a {
-    font-weight: 600;
-  }
-  
-  /* Main Content */
-  .content {
-    flex: 1;
-    padding: 40px;
-    max-width: 800px;
-  }
-  
-  h1 {
-    font-family: var(--font-heading);
-    font-size: 34px;
-    line-height: 1.2em;
-    margin-bottom: 20px;
-  }
-  
-  h2 {
-    font-family: var(--font-heading);
-    font-size: 28px;
-    line-height: 1.2em;
-    margin-top: 20px;
-    margin-bottom: 12px;
-  }
-  
-  ol {
-    margin-left: 1.6rem;
-    margin-top: 0.8rem;
-    margin-bottom: 0.6rem;
-  }
-  
-  li {
-    line-height: 1.5em;
-  }
-  
-  p {
-    margin-bottom: 0.8em;
-  }
-  
-  .subtitle {
-    font-size: 20px;
-    line-height: 1.3em;
-    margin-bottom: 24px;
-  }
-  
-  .main-image {
-    width: 100%;
-    max-width: 600px;
-    border-radius: 8px;
-    margin: 20px 0;
-  }
-  
-  /* Right Sidebar */
+}
+
+@media (max-width: 900px) {
   .right-sidebar {
-    width: 200px;
-    background: var(--color-background);
+    display: none;
+  }
+
+  .container {
+    grid-template-columns: 1fr;
+  }
+
+  .content {
     padding: 20px;
-    border-left: 1px solid var(--color-border);
   }
-  
-  .right-sidebar h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  .right-sidebar ul {
-    list-style: none;
-  }
-  
-  .right-sidebar ul li {
-    margin-bottom: 10px;
-  }
-  
-  .right-sidebar ul li a {
-    text-decoration: none;
-    color: var(--color-primary);
-  }
-  
-  .right-sidebar ul li a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Note Component */
-  .note {
-    background: #fffbf2;
-    border-left: 5px solid var(--color-active);
-    padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .note strong {
-    display: block;
-    font-size: 16px;
-    color: var(--color-active);
-    margin-bottom: 5px;
-  }
-  
-  .note p {
-    font-size: 16px;
-    line-height: 1.5em;
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 900px) {
-    .right-sidebar {
-      display: none;
-    }
-  }
-  
-  @media (max-width: 700px) {
-    .sidebar {
-      width: 200px;
-    }
-  
-    .container {
-      flex-direction: column;
-    }
-  
-    .content {
-      padding: 20px;
-    }
-  }
-  
+}
