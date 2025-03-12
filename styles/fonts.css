@@ -42,6 +42,13 @@
 }
 
 @font-face {
+    font-family: 'SF Pro Text 400';
+    font-style: italic;
+    font-weight: 400;
+    src: url("../fonts/SF-Pro-Text/sf-pro-text-regularitalic.woff2") format("woff2");
+}
+
+@font-face {
     font-family: 'SF Pro Text 600';
     font-style: normal;
     font-weight: 600;

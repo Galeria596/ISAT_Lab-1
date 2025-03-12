@@ -5,24 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Электродинамика. Электромагнитная индукция</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <style>
-      .video {
-        display: flex;
-        height: 240px;
-        width: 320px;
-        background-color: #000;
-        color: #fff;
-        justify-content: center;
-        align-items: center;
-      }
-    </style>
   </head>
 
   <body>
     <div class="container">
       <!-- Left Sidebar -->
       <nav class="sidebar">
-        <h3>ГДЗ Виленкин 6 класс</h3>
+        <h3>Физика: 9 класс</h3>
         <ul>
           <li><a href="index.html">Механические колебания и волны</a></li>
           <li class="active">
@@ -35,7 +24,16 @@
       <!-- Main Content -->
       <main class="content">
         <h1>Электродинамика. Электромагнитная индукция</h1>
-        <h3 id="point1">Магнитный поток</h3>
+        <h3 id="magnetic-flux">Магнитный поток</h3>
+
+        <div class="audio-block">
+          <audio controls>
+            <source src="sound/other/1.wav" type="audio/x-wav" />
+            Ваш браузер не поддерживает HTML5 аудио.
+          </audio>
+          <a href="sound/other/1.wav" download="Магнитный поток">Скачать</a>
+        </div>
+
         <div class="note">
           <strong>Определение</strong>
           <p>
@@ -131,7 +129,16 @@
           поверхность равен нулю.
         </p>
 
-        <h3>Явление электромагнитной индукции</h3>
+        <h3 id="electromagnetic-induction">Явление электромагнитной индукции</h3>
+
+        <div class="audio-block">
+          <audio controls>
+            <source src="sound/other/2.wav" type="audio/x-wav" />
+            Ваш браузер не поддерживает HTML5 аудио.
+          </audio>
+          <a href="sound/other/2.wav" download="Явление ЭДС индукции">Скачать</a>
+        </div>
+
         <p>
           В 1831 году Фарадей, ставя опыты, обнаружил интересный эффект. На железном сердечнике намотаны две катушки.
           Первая из них подключается к источнику тока, а вторая &mdash; к гальванометру (рис. 1). При включении тока в
@@ -139,7 +146,7 @@
         </p>
         <figure class="img-container">
           <img src="pics/other/faraday.png" alt="Опыт Фарадея" />
-          <figcaption>Рис. 1 &mdash; Опыт Фарадея</figcaption>
+          <figcaption class="img-label">Рис. 1 &mdash; Опыт Фарадея</figcaption>
         </figure>
 
         <p>
@@ -153,6 +160,14 @@
           повторяться до бесконечности.
         </p>
 
+        <div class="audio-block">
+          <audio controls>
+            <source src="sound/other/3.wav" type="audio/x-wav" />
+            Ваш браузер не поддерживает HTML5 аудио.
+          </audio>
+          <a href="sound/other/3.wav" download="Правило Ленца и закон ЭДС индукции">Скачать</a>
+        </div>
+
         <div class="note">
           <strong>Определение</strong>
           <p>
@@ -162,7 +177,7 @@
           </p>
         </div>
 
-        <h3>Закон электромагнитной индукции</h3>
+        <h3 id="law-of-induction">Закон электромагнитной индукции</h3>
         <p>
           Количественно из эксперимента было получено, что сила индукционного тока пропорциональна скорости изменения
           магнитного потока:
@@ -197,7 +212,16 @@
           </p>
         </div>
 
-        <h3>ЭДС индукции в движущихся проводникаx</h3>
+        <h3 id="induction-in-conductor">ЭДС индукции в движущихся проводникаx</h3>
+
+        <div class="audio-block">
+          <audio controls>
+            <source src="sound/other/4.wav" type="audio/x-wav" />
+            Ваш браузер не поддерживает HTML5 аудио.
+          </audio>
+          <a href="sound/other/4.wav" download="ЭДС индукции в проводникаx">Скачать</a>
+        </div>
+
         <p>
           Рассмотрим движущийся в однородном магнитном поле проводник. В нём на каждый заряд действует сила Лоренца. Под
           её действием внутри проводника начинают двигаться свободные заряды, из-за чего появляется электродвижущая
@@ -229,7 +253,9 @@
         </div>
         <figure class="img-container">
           <img src="pics/other/model.png" alt="Модель движения проводника" />
-          <figcaption>Рис. 2 &mdash; Физическая модель движения проводника в магнитном поле</figcaption>
+          <figcaption class="img-label">
+            Рис. 2 &mdash; Физическая модель движения проводника в магнитном поле
+          </figcaption>
         </figure>
 
         <p>
@@ -341,11 +367,24 @@
           </math>
         </div>
 
-        <video width="320" height="240" controls>
-          <source src="pics/other/vid1.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-      </video>
-        <h3 id="point2">Явление самоиндукции. Индуктивность</h3>
+        <div class="vid-container">
+          <video width="320" height="240" controls>
+            <source src="pics/other/vid1.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает HTML5 видео
+          </video>
+          <a href="pics/other/vid1.mp4" download="vid1">Скачать</a>
+        </div>
+
+        <h3 id="inductance">Явление самоиндукции. Индуктивность</h3>
+
+        <div class="audio-block">
+          <audio controls>
+            <source src="sound/other/5.wav" type="audio/x-wav" />
+            Ваш браузер не поддерживает HTML5 аудио.
+          </audio>
+          <a href="sound/other/5.wav" download="Индуктивность">Скачать</a>
+        </div>
+
         <div class="note">
           <strong>Определение</strong>
           <p>
@@ -450,11 +489,15 @@
           самоиндукции препятствует изменению тока в проводнике.
         </p>
 
-        <video width="320" height="240" controls>
-          <source src="pics/other/vid2.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-      </video>
-        <h3 id="point3" >Энергия магнитного поля. Магнитные свойства вещества</h3>
+        <div class="vid-container">
+          <video width="320" height="240" controls>
+            <source src="pics/other/vid2.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает HTML5 видео
+          </video>
+          <a href="pics/other/vid2.mp4" download="vid2">Скачать</a>
+        </div>
+
+        <h3 id="magnetic-field-energy">Энергия магнитного поля. Магнитные свойства вещества</h3>
         <div class="note">
           <strong>Определение</strong>
           <p>
@@ -552,19 +595,25 @@
           </li>
         </ul>
 
-        <video width="320" height="240" controls>
-          <source src="pics/other/vid3.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-      </video>
+        <div class="vid-container">
+          <video width="320" height="240" controls>
+            <source src="pics/other/vid3.mp4" type="video/mp4" />
+            Ваш браузер не поддерживает HTML5 видео
+          </video>
+          <a href="pics/other/vid3.mp4" download="vid3">Скачать</a>
+        </div>
       </main>
 
       <!-- Right Sidebar -->
       <aside class="right-sidebar">
         <h3>Электродинамика. Электромагнитная индукция</h3>
         <ul>
-          <li><a href="#point1">Пункт 1</a></li>
-          <li><a href="#point2">Пункт 2</a></li>
-          <li><a href="#point3">Пункт 3</a></li>
+          <li><a href="#magnetic-flux">Магнитный поток</a></li>
+          <li><a href="#electromagnetic-induction">Явление ЭДС индукции</a></li>
+          <li><a href="#law-of-induction">Закон ЭДС индукции</a></li>
+          <li><a href="#induction-in-conductor">ЭДС индукции в проводникаx</a></li>
+          <li><a href="#inductance">Индуктивность</a></li>
+          <li><a href="#magnetic-field-energy">Энергия магнитного поля</a></li>
         </ul>
       </aside>
     </div>

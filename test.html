@@ -1,284 +1,261 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html lang="ru">
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Тест на знание пройденного материала</title>
     <link rel="stylesheet" href="styles/styles.css" />
-    <title>Math Quiz</title>
-    <style>
-        /* Basic styling for layout and readability */
+    <link rel="stylesheet" href="styles/test.css" />
+    <script defer src="scripts/main.js"></script>
+  </head>
 
-        #quiz,
-        #results {
-            max-width: 800px;
-            margin: 0 auto;
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-        }
-
-        .question {
-            margin-bottom: 20px;
-        }
-
-        .question p {
-            margin: 0 0 10px 0;
-            font-weight: bold;
-        }
-
-        .options label {
-            display: block;
-            margin-bottom: 5px;
-            cursor: pointer;
-        }
-
-        button {
-            display: block;
-            width: 100%;
-            padding: 10px;
-            font-size: 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #0056b3;
-        }
-
-        #results {
-            display: none;
-            /* Hidden until quiz is submitted */
-        }
-
-        #results p {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-    </style>
-</head>
-
-<body>
+  <body>
     <div class="container">
-        <!-- Left Sidebar -->
-        <nav class="sidebar">
-            <h3>ГДЗ Виленкин 6 класс</h3>
-            <ul>
-                <li><a href="index.html">Механические колебания и волны</a></li>
-                <li>
-                    <a href="other.html">Электродинамика. Электромагнитная индукция</a>
-                </li>
-                <li class="active"><a href="">Тест</a></li>
-            </ul>
-        </nav>
+      <!-- Left Sidebar -->
+      <nav class="sidebar">
+        <h3>Физика: 9 класс</h3>
+        <ul>
+          <li><a href="index.html">Механические колебания и волны</a></li>
+          <li>
+            <a href="other.html">Электродинамика. Электромагнитная индукция</a>
+          </li>
+          <li class="active"><a href="">Тест</a></li>
+        </ul>
+      </nav>
 
-        <!-- Main Content -->
-        <main class="content">
-            <!-- Quiz Section -->
-            <div id="quiz">
-                <h1>Тест</h1>
-                <h2>Механика</h2>
-                <form id="quizForm">
-                    <div class="question">
-                        <p>
-                            1. Какие из следующих явлений являются примерами механических
-                            колебаний?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q1" value="A" /> A) Колебания
-                                струны гитары</label>
-                            <label><input type="radio" name="q1" value="B" /> B)
-                                Радиоволны</label>
-                            <label><input type="radio" name="q1" value="C" /> C) Световое
-                                излучение</label>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <p>
-                            2. Какое из уравнений описывает гармонические колебания, если
-                            движение начинается с максимального отклонения в момент времени
-                            t = 0 ?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q2" value="A" /> A) xt=Acos
-                                2πνt+0</label>
-                            <label><input type="radio" name="q2" value="B" /> B) xt=Asin
-                                2πνt+0</label>
-                            <label><input type="radio" name="q2" value="C" /> C) xt=Asin t+0
-                            </label>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <p>
-                            3. Какое из следующих явлений является примером автоколебаний?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q3" value="A" /> A) Колебания струн
-                                гитары после того, как их коснулся музыкант</label>
-                            <label><input type="radio" name="q3" value="B" /> B) Колебания
-                                грузика на пружине, который периодически сжимается и
-                                растягивается</label>
-                            <label><input type="radio" name="q3" value="C" /> C) Колебания
-                                колеса автомобиля при движении по неровной дороге</label>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <p>
-                            4. Период колебаний потенциальной энергии пружинного маятника
-                            1 с. Каким будет период её колебаний, если массу груза маятника
-                            и жесткость пружины уменьшить в 8 раз? Ответ дайте в секундах.
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q4" value="A" /> A) 2 сек</label>
-                            <label><input type="radio" name="q4" value="B" /> B) 1 сек</label>
-                            <label><input type="radio" name="q4" value="C" /> C) 0.5 сек</label>
-                        </div>
-                    </div>
+      <!-- Main Content -->
+      <main class="content">
+        <!-- Quiz Section -->
+        <div id="quiz">
+          <h1>ТЕСТ</h1>
 
-                    <div class="question">
-                        <p>
-                            5. В таблице представлены данные о положении точки, гармонически
-                            колеблющейся вдоль оси Ox в различные моменты времени. Чему
-                            равна амплитуда колебаний точки?
-                        </p>
-                        <figure class="img-container">
-                            <img src="pics/test/question5.webp" alt="Рисунок волны" />
-                        </figure>
-                        <div class="options">
-                            <label><input type="radio" name="q5" value="A" /> A) 15 м</label>
-                            <label><input type="radio" name="q5" value="B" /> B) 5 м</label>
-                            <label><input type="radio" name="q5" value="C" /> C) 10 м</label>
-                        </div>
-                    </div>
+          <!-- Mechanical oscillation -->
 
-                    <h2>Электричество</h2>
-                    <div class="question">
-                        <p>
-                            6. Поток магнитной индукции рассчитывается как:
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q1" value="A" /> A) Магнитный поток равен произведению
-                                магнитной индукции на напряженность магнитного поля</label>
-                            <label><input type="radio" name="q1" value="B" /> B) Магнитный поток рассчитывается как
-                                разность между магнитной индукцией и плотностью тока</label>
-                            <label><input type="radio" name="q1" value="C" /> C) Магнитный поток равен интегралу от
-                                скалярного произведения магнитной индукции и элемента площади</label>
-                        </div>
-                    </div>
+          <h2>Механические колебания и волны</h2>
+          <form id="quiz-form">
+            <ol class="questions">
+              <li class="question">Какие из следующих явлений являются примерами механических колебаний?</li>
+              <div class="answers">
+                <label for="1A">
+                  <input type="radio" id="1A" name="1" value="A" /> A&rpar; Колебания струны гитары
+                </label>
+                <label for="1B"> <input type="radio" id="1B" name="1" value="B" /> B&rpar; Радиоволны </label>
+                <label for="1C"> <input type="radio" id="1C" name="1" value="C" /> C&rpar; Световое излучение </label>
+              </div>
 
-                    <div class="question">
-                        <p>
-                            7. Заполните пропуски в следующем предложении:
-                        </p>
-                        <p>
-                            При движении перекладины магнитный поток ______, поэтому индукционный ток будет направлен
-                            ______, чтобы создавать магнитное поле, препятствующее ______ потока.
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q1" value="A" /> A) Увеличивается / Против часовой стрелки
-                                / Увеличению</label>
-                            <label><input type="radio" name="q1" value="B" /> B)
-                                Уменьшается / По часовой стрелке / Увеличению</label>
-                            <label><input type="radio" name="q1" value="C" /> C) Не изменяется / По часовой стрелке /
-                                Уменьшению</label>
-                        </div>
-                    </div>
+              <li class="question">
+                Какое из уравнений описывает гармонические колебания, если движение начинается с максимального
+                отклонения в момент времени
+                <span class="formula inline">
+                  <math><mi>t</mi><mo>=</mo><mn>0</mn></math>
+                  <span>?</span>
+                </span>
+              </li>
+              <div class="answers">
+                <label for="2A">
+                  <input type="radio" id="2A" name="2" value="A" /> A&rpar;
+                  <span class="formula inline">
+                    <math>
+                      <mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo>
+                      <mo>=</mo>
+                      <mi>A</mi>
+                      <mo>cos</mo>
+                      <mo>(</mo><mn>2</mn><mi>&pi;</mi><mi>&nu;</mi><mi>t</mi>
+                      <mo>+</mo>
+                      <msub> <mi>&phi;</mi><mn>0</mn> </msub>
+                      <mo>)</mo>
+                    </math>
+                  </span>
+                </label>
+                <label for="2B">
+                  <input type="radio" id="2B" name="2" value="B" /> B&rpar;
+                  <span class="formula inline">
+                    <math>
+                      <mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo>
+                      <mo>=</mo>
+                      <mi>A</mi>
+                      <mo>sin</mo>
+                      <mo>(</mo><mn>2</mn><mi>&pi;</mi><mi>&nu;</mi><mi>t</mi>
+                      <mo>+</mo>
+                      <msub> <mi>&phi;</mi><mn>0</mn> </msub>
+                      <mo>)</mo>
+                    </math>
+                  </span>
+                </label>
+                <label for="2C">
+                  <input type="radio" id="2C" name="2" value="C" /> C&rpar;
+                  <span class="formula inline">
+                    <math>
+                      <mi>x</mi><mo>(</mo><mi>t</mi><mo>)</mo>
+                      <mo>=</mo>
+                      <mi>A</mi>
+                      <mo>sin</mo>
+                      <mo>(</mo><mi>t</mi>
+                      <mo>+</mo>
+                      <msub> <mi>&phi;</mi><mn>0</mn> </msub>
+                      <mo>)</mo>
+                    </math>
+                  </span>
+                </label>
+              </div>
 
-                    <div class="question">
-                        <p>
-                            8. Какое из следующих утверждений о магнитном потоке является правильным?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q1" value="A" /> A) Магнитный поток зависит только от
-                                площади поверхности, через которую проходит магнитное поле.</label>
-                            <label><input type="radio" name="q1" value="B" /> B)Магнитный поток зависит от угла между
-                                направлением магнитного поля и нормалью к площади</label>
-                            <label><input type="radio" name="q1" value="C" /> C) Магнитный поток всегда равен нулю для
-                                любых замкнутых поверхностей.</label>
-                        </div>
-                    </div>
+              <li class="question">Какое из следующих явлений является примером автоколебаний?</li>
+              <div class="answers">
+                <label for="3A">
+                  <input type="radio" id="3A" name="3" value="A" /> A&rpar; Колебания струн гитары после того, как их
+                  коснулся музыкант
+                </label>
+                <label for="3B">
+                  <input type="radio" id="3B" name="3" value="B" /> B&rpar; Колебания грузика на пружине, который
+                  периодически сжимается и растягивается
+                </label>
+                <label for="3C">
+                  <input type="radio" id="3C" name="3" value="C" /> C&rpar; Колебания колеса автомобиля при движении по
+                  неровной дороге
+                </label>
+              </div>
 
-                    <div class="question">
-                        <p>
-                            9. Как изменится магнитный поток через прямоугольную рамку при изменении угла между нормалью
-                            к её плоскости и вектором магнитной индукции?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q1" value="A" /> A) Магнитный поток увеличится, если угол
-                                уменьшается</label>
-                            <label><input type="radio" name="q1" value="B" /> B)
-                                Магнитный поток уменьшится, если угол увеличивается</label>
-                            <label><input type="radio" name="q1" value="C" /> C) Магнитный поток изменится только при
-                                изменении площади рамки.</label>
-                        </div>
-                    </div>
-                    <div class="question">
-                        <p>
-                            10. В каком направлении будет направлен индукционный ток в катушке, если магнитный поток
-                            через неё увеличивается?
-                        </p>
-                        <div class="options">
-                            <label><input type="radio" name="q1" value="A" /> A) По часовой стрелке</label>
-                            <label><input type="radio" name="q1" value="B" /> B)
-                                Против часовой стрелки</label>
-                            <label><input type="radio" name="q1" value="C" /> C) Направление индукционного тока не
-                                зависит от изменения магнитного потока</label>
-                        </div>
-                    </div>
-                    <button type="submit">Submit</button>
-                </form>
-            </div>
+              <li class="question">
+                Период колебаний потенциальной энергии пружинного маятника 1 с. Каким будет период её колебаний, если
+                массу груза маятника и жесткость пружины уменьшить в 8 раз?
+              </li>
+              <div class="answers">
+                <label for="4A"><input type="radio" id="4A" name="4" value="A" /> A&rpar; 2 сек</label>
+                <label for="4B"><input type="radio" id="4B" name="4" value="B" /> B&rpar; 1 сек</label>
+                <label for="4C"><input type="radio" id="4C" name="4" value="C" /> C&rpar; 0,5 сек</label>
+              </div>
 
-            <!-- Results Section -->
-            <div id="results">
-                <h1>Results</h1>
-                <p>Correct answers: <span id="correct"></span></p>
-                <p>Incorrect answers: <span id="incorrect"></span></p>
-            </div>
-        </main>
+              <li class="question">
+                В таблице представлены данные о положении точки, гармонически колеблющейся вдоль оси
+                <span class="fornula inline">
+                  <math><mi>OX</mi></math>
+                </span>
+                в различные моменты времени. Чему равна амплитуда колебаний точки?
+              </li>
+              <figure class="img-container">
+                <img src="pics/test/question5.webp" alt="Таблица данных" />
+              </figure>
+              <div class="answers">
+                <label for="5A"><input type="radio" id="5A" name="5" value="A" /> A&rpar; 15 м</label>
+                <label for="5B"><input type="radio" id="5B" name="5" value="B" /> B&rpar; 5 м</label>
+                <label for="5C"><input type="radio" id="5C" name="5" value="C" /> C&rpar; 10 м</label>
+              </div>
+            </ol>
+
+            <!-- Electromagnetism -->
+
+            <h2>Электродинамика</h2>
+            <ol class="questions" start="6">
+              <li class="question">Поток магнитной индукции рассчитывается как:</li>
+              <div class="answers">
+                <label for="6A">
+                  <input type="radio" id="6A" name="6" value="A" /> A&rpar; Магнитный поток равен произведению магнитной
+                  индукции на напряженность магнитного поля
+                </label>
+                <label for="6B">
+                  <input type="radio" id="6B" name="6" value="B" /> B&rpar; Магнитный поток рассчитывается как разность
+                  между магнитной индукцией и плотностью тока
+                </label>
+                <label for="6C">
+                  <input type="radio" id="6C" name="6" value="C" /> C&rpar; Магнитный поток равен интегралу от
+                  скалярного произведения магнитной индукции и элемента площади
+                </label>
+              </div>
+
+              <li class="question">
+                Заполните пропуски в следующем предложении:
+                <br />
+                <span class="task">
+                  При движении перекладины магнитный поток ______, поэтому индукционный ток будет направлен ______,
+                  чтобы создавать магнитное поле, препятствующее ______ потока.
+                </span>
+              </li>
+              <div class="answers">
+                <label for="7A">
+                  <input type="radio" id="7A" name="7" value="A" /> A&rpar; Увеличивается / Против часовой стрелки /
+                  Увеличению
+                </label>
+                <label for="7B">
+                  <input type="radio" id="7B" name="7" value="B" /> B&rpar; Уменьшается / По часовой стрелке /
+                  Увеличению
+                </label>
+                <label for="7C">
+                  <input type="radio" id="7C" name="7" value="C" /> C&rpar; Не изменяется / По часовой стрелке /
+                  Уменьшению
+                </label>
+              </div>
+
+              <li class="question">Какое из следующих утверждений о магнитном потоке является правильным?</li>
+              <div class="answers">
+                <label for="8A">
+                  <input type="radio" id="8A" name="8" value="A" /> A&rpar; Магнитный поток зависит только от площади
+                  поверхности, через которую проходит магнитное поле.
+                </label>
+                <label for="8B">
+                  <input type="radio" id="8B" name="8" value="B" /> B&rpar; Магнитный поток зависит от угла между
+                  направлением магнитного поля и нормалью к площади
+                </label>
+                <label for="8C">
+                  <input type="radio" id="8C" name="8" value="C" /> C&rpar; Магнитный поток всегда равен нулю для любых
+                  замкнутых поверхностей.
+                </label>
+              </div>
+
+              <li class="question">
+                Как изменится магнитный поток через прямоугольную рамку при изменении угла между нормалью к её плоскости
+                и вектором магнитной индукции?
+              </li>
+              <div class="answers">
+                <label for="9A">
+                  <input type="radio" id="9A" name="9" value="A" /> A&rpar; Магнитный поток увеличится, если угол
+                  уменьшается
+                </label>
+                <label for="9B">
+                  <input type="radio" id="9B" name="9" value="B" /> B&rpar; Магнитный поток уменьшится, если угол
+                  увеличивается
+                </label>
+                <label for="9C">
+                  <input type="radio" id="9C" name="9" value="C" /> C&rpar; Магнитный поток изменится только при
+                  изменении площади рамки.
+                </label>
+              </div>
+
+              <li class="question">
+                В каком направлении будет направлен индукционный ток в катушке, если магнитный поток через неё
+                увеличивается?
+              </li>
+              <div class="answers">
+                <label for="10A">
+                  <input type="radio" id="10A" name="10" value="A" /> A&rpar; По часовой стрелке
+                </label>
+                <label for="10B">
+                  <input type="radio" id="10B" name="10" value="B" /> B&rpar; Против часовой стрелки
+                </label>
+                <label for="10C">
+                  <input type="radio" id="10C" name="10" value="C" /> C&rpar; Направление индукционного тока не зависит
+                  от изменения магнитного потока
+                </label>
+              </div>
+            </ol>
+
+            <button type="submit">Результаты</button>
+          </form>
+        </div>
+
+        <!-- Results Section -->
+        <div id="results">
+          <h1>РЕЗУЛЬТАТ</h1>
+          <p><b>Правильных ответов:</b> <span id="count">0</span> / 10 (<span id="percentage">0</span>%)</p>
+          <div id="themes-repeat">
+            <h2>Советуем повторить следующие темы:</h2>
+            <h3 class="1 3"><a href="index.html#oscillations-types" target="_blank">Свободные и вынужденные колебания</a></h3>
+            <h3 class="2 5"><a href="index.html#harmonic-oscillations" target="_blank">Гармонические колебания. Энергия гармонических колебаний</a></h3>
+            <h3 class="4"><a href="index.html#spring-pendulum" target="_blank">Пружинный маятник</a></h3>
+            <h3 class="6 8 9"><a href="other.html#magnetic-flux" target="_blank">Магнитный поток</a></h3>
+            <h3 class="7 10"><a href="other.html#electromagnetic-induction" target="_blank">Явление электромагнитной индукции</a></h3>
+          </div>
+        </di>
+      </main>
     </div>
-    <!-- JavaScript for handling submission -->
-    <script>
-        document
-            .getElementById("quizForm")
-            .addEventListener("submit", function (event) {
-                event.preventDefault(); // Prevent form from submitting to a server
-
-                // Array of correct answers (A, B, B, C, A correspond to questions 1-5)
-                const correctAnswers = ["A", "A", "B", "B", "A", "C", "B", "B", "A", "A"];
-                let correctCount = 0;
-                const totalQuestions = 10;
-
-                // Check each question's selected answer
-                for (let i = 1; i <= totalQuestions; i++) {
-                    const selected = document.querySelector(
-                        `input[name="q${i}"]:checked`
-                    );
-                    if (selected && selected.value === correctAnswers[i - 1]) {
-                        correctCount++;
-                    }
-                }
-
-                // Calculate incorrect answers
-                const incorrectCount = totalQuestions - correctCount;
-
-                // Update the results display
-                document.getElementById("correct").textContent = correctCount;
-                document.getElementById("incorrect").textContent = incorrectCount;
-
-                // Hide quiz and show results
-                document.getElementById("quiz").style.display = "none";
-                document.getElementById("results").style.display = "block";
-            });
-    </script>
-</body>
-
+  </body>
 </html>

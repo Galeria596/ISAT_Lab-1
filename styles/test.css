@@ -1,0 +1,88 @@
+/* Basic styling for layout and readability */
+
+#quiz,
+#results {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+#results,
+#themes-repeat,
+#themes-repeat h3 {
+  display: none;
+  /* Hidden until quiz is submitted */
+}
+
+#results p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+#themes-repeat {
+  margin-top: 24px;
+}
+
+.questions {
+  margin-left: 0;
+}
+
+.question {
+  margin: 1em 0;
+}
+
+.question,
+.question * {
+  font-weight: bold;
+}
+
+.task {
+  font-weight: normal;
+  font-style: italic;
+}
+
+.answers label {
+  display: block;
+  margin: 0.5em;
+  cursor: pointer;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+h3 a {
+  text-decoration: none;
+  color: var(--color-primary);
+}
+
+h3 a:hover {
+  color: var(--color-secondary);
+}
+
+button {
+  display: block;
+  width: 100%;
+  margin-top: 2em;
+  padding: 1em;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #7138B5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #35096B;
+}
+
+@media (max-width: 1150px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+}
